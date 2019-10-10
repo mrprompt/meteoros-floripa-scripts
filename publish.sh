@@ -19,4 +19,4 @@ echo "Sincronizing with S3"
 aws s3 sync "$captures_path" s3://meteoros/
 
 echo "Making collection to website"
-. /home/thiago/publish/make-collection.py "$captures_path" "$site_path"
+python3 /home/thiago/publish/make-collection.py "$captures_path" "$site_path"

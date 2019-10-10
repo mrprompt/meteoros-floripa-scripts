@@ -18,5 +18,3 @@ for HOST in ${DIRS[@]}; do
 
   ((ITER++))
 done
-
-exit 0

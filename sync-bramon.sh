@@ -10,11 +10,10 @@ DIRS=(BRAMON-1 BRAMON-2 BRAMON-3 BRAMON-4)
 
 # shellcheck disable=SC2068
 for HOST in ${DIRS[@]}; do
-  if isPathMounted "${HOST}/";
-    then
-      captures="${HOST}/!data/"
+  if isPathMounted "${HOST}/"; then
+    captures="${HOST}/!data/"
 
-      rsync -acruvz "${captures}" "/mnt/storage-2/Meteoros/"
+    rsync -aruvP "${captures}" "/mnt/storage-2/Meteoros/"
   fi
 
   ((ITER++))

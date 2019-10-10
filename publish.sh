@@ -10,11 +10,7 @@ echo "Converting files"
 . "$script_path"/convert-files.sh "$captures_path"
 
 echo "Sincronizing with S3"
-cd "$captures_path" && aws s3 sync "$captures_path" s3://meteoros/
-
-echo "Activating Python environment"
-source "$HOME"/.venvs/meteoros-floripa/bin/activate
+aws s3 sync "$captures_path" s3://meteoros/
 
 echo "Making collection to website"
-python "$script_path"/make-collection.py "$captures_path" "$site_path"
-
+. "$script_path"/make-collection.py "$captures_path" "$site_path"

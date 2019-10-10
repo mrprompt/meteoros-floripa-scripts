@@ -7,7 +7,7 @@ echo "Syncronizing BRAMON captures"
 . "$script_path"/sync-bramon.sh
 
 echo "Cleanup zero files"
-. "$script_path"/cleanup-empty-files.sh
+. "$script_path"/cleanup-empty-files.sh "$captures_path"
 
 echo "Converting images files"
 . "$script_path"/convert-images.sh "$captures_path"

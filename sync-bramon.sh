@@ -6,7 +6,7 @@ isPathMounted() {
   findmnt -rno        TARGET "$1" >/dev/null;
 }
 
-DIRS=(BRAMON-1 BRAMON-2 BRAMON-3 BRAMON-4)
+DIRS=(BRAMON-1 BRAMON-2 BRAMON-3 BRAMON-4 BRAMON-5)
 
 # shellcheck disable=SC2068
 for HOST in ${DIRS[@]}; do

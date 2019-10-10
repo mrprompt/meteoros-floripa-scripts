@@ -6,8 +6,14 @@ site_path=/home/thiago/site/
 echo "Syncronizing BRAMON captures"
 . "$script_path"/sync-bramon.sh
 
-echo "Converting files"
-. "$script_path"/convert-files.sh "$captures_path"
+echo "Cleanup zero files"
+. "$script_path"/cleanup-empty-files.sh
+
+echo "Converting images files"
+. "$script_path"/convert-images.sh "$captures_path"
+
+echo "Converting video files"
+. "$script_path"/convert-videos.sh "$captures_path"
 
 echo "Sincronizing with S3"
 aws s3 sync "$captures_path" s3://meteoros/
